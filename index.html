@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="PIHOCO — What sells isn’t always what earns.">
 <meta property="og:description" content="Menu engineering and F&amp;B advisory. Start with the Menu Profit Boost Audit.">
-<meta property="og:image" content="assets/img/hero-1672.jpg">
+<meta property="og:image" content="assets/img/og-share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/newsreader-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -514,6 +514,28 @@ html[data-season="winter"]{--brass:#946f3e;--brass-l:#d2b487}
   .check__result{grid-template-columns:1fr;padding:24px}
 }
 
+/* ---------- v7: imagery ---------- */
+.plates{position:relative;margin:0 0 clamp(56px,7vw,96px);overflow:hidden}
+.plates img{width:100%;aspect-ratio:1376/768;object-fit:cover}
+.plates__v,.plates__h{position:absolute;pointer-events:none;border-color:rgba(28,25,21,.55);border-style:dashed;border-width:0;transition:transform 1.8s var(--ease) .4s}
+.plates__v{left:50.5%;top:6%;bottom:6%;border-left-width:1px;transform:scaleY(0);transform-origin:50% 0}
+.plates__h{top:49.5%;left:24%;right:24%;border-top-width:1px;transform:scaleX(0);transform-origin:0 50%}
+.plates.is-in .plates__v{transform:none}.plates.is-in .plates__h{transform:none}
+.plates__t{position:absolute;font:500 .62rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);background:rgba(243,238,230,.88);padding:8px 10px;opacity:0;transform:translateY(6px);transition:opacity 1s var(--ease) 1.2s,transform 1s var(--ease) 1.2s}
+.plates.is-in .plates__t{opacity:1;transform:none}
+.plates__t--tl{left:12%;top:8%}.plates__t--tr{right:12%;top:8%}.plates__t--bl{left:12%;bottom:8%}.plates__t--br{right:12%;bottom:8%}
+.plates figcaption{position:absolute;left:16px;bottom:14px;font:italic 300 .95rem/1 var(--serif);color:var(--ink);opacity:.7}
+.services__img{margin-top:40px;max-width:360px;overflow:hidden}
+.services__img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.services__img figcaption{margin-top:12px;font:italic 300 1rem/1.35 var(--serif);color:var(--muted)}
+.pause img{inset:-8% 0;height:116%;filter:brightness(.5) saturate(.9)}
+@media (max-width:980px){.services__img{max-width:420px}}
+@media (max-width:640px){.plates__t{font-size:.5rem;padding:5px 6px}.plates figcaption{display:none}}
+@media (prefers-reduced-motion:reduce){.plates__v,.plates__h{transform:none}.plates__t{opacity:1;transform:none}}
+.plates__t--tl{left:auto;right:51.2%;top:40%}.plates__t--tr{right:auto;left:51.8%;top:40%}
+.plates__t--bl{left:auto;right:51.2%;bottom:auto;top:54%}.plates__t--br{right:auto;left:51.8%;bottom:auto;top:54%}
+@media (max-width:640px){.pause img{object-position:38% 50%}}
+
 </style>
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
@@ -633,7 +655,7 @@ html[data-season="winter"]{--brass:#946f3e;--brass-l:#d2b487}
       <figcaption><span>Your menu &amp; sales</span><span>Read on the matrix</span><span>A decision per dish</span></figcaption>
     </figure>
     <figure class="audit__img" data-reveal>
-      <img src="assets/img/consultation-768.webp" width="768" height="1365" alt="A consultant reviewing menu data with chefs in a restaurant kitchen." loading="lazy" decoding="async">
+      <img src="assets/img/costing-desk.webp" width="678" height="848" alt="A costing desk: notebook, calculator, supplier invoices and an espresso." loading="lazy" decoding="async">
     </figure>
     <div class="audit__cols" data-reveal>
       <div>
@@ -681,7 +703,7 @@ html[data-season="winter"]{--brass:#946f3e;--brass-l:#d2b487}
 
   <!-- IMAGE STATEMENT -->
   <section class="pause" aria-label="The PIHOCO principle">
-    <img src="assets/img/kitchen-fire-1200.webp" srcset="assets/img/kitchen-fire-720.webp 720w, assets/img/kitchen-fire-1200.webp 1200w" sizes="100vw" width="1200" height="1800" alt="" loading="lazy" decoding="async" data-parallax>
+    <img src="assets/img/pan-steam.webp" width="1376" height="768" alt="" loading="lazy" decoding="async" data-parallax>
     <p data-reveal>Good food fills the room.<br><em>Good decisions keep it open.</em></p>
   </section>
 
@@ -692,6 +714,14 @@ html[data-season="winter"]{--brass:#946f3e;--brass-l:#d2b487}
       <h2 class="h2" id="method-title" data-reveal>Four kinds of dish. <em>Four decisions.</em></h2>
       <p class="lede" data-reveal>Every dish is plotted by popularity and contribution. Select one — or change its price — to see its role on the menu shift.</p>
     </div>
+
+    <figure class="plates" data-reveal>
+      <img src="assets/img/plates-matrix.webp" width="1376" height="768" alt="Four plated dishes arranged in a two-by-two grid on linen, like the menu engineering matrix." loading="lazy" decoding="async">
+      <span class="plates__v" aria-hidden="true"></span><span class="plates__h" aria-hidden="true"></span>
+      <span class="plates__t plates__t--tl">Puzzle</span><span class="plates__t plates__t--tr">Star</span>
+      <span class="plates__t plates__t--bl">Dog</span><span class="plates__t plates__t--br">Plowhorse</span>
+      <figcaption>Four plates. Four roles on the menu.</figcaption>
+    </figure>
 
     <div class="mx" data-matrix data-reveal>
       <div class="mx__plot" data-mx-plot>
@@ -740,6 +770,10 @@ html[data-season="winter"]{--brass:#946f3e;--brass-l:#d2b487}
     <div class="services__head">
       <p class="label" data-reveal>Services</p>
       <h2 class="h2" id="services-title" data-reveal>Start with <em>the menu.</em></h2>
+      <figure class="services__img" data-reveal>
+        <img src="assets/img/menu-card.webp" width="600" height="750" alt="An engineered dinner menu on a candlelit table, with the best-earning dish boxed as chef’s recommendation." loading="lazy" decoding="async">
+        <figcaption>An engineered menu: the best earner boxed and moved up.</figcaption>
+      </figure>
     </div>
     <div class="acc" data-reveal>
       <details open>
@@ -765,9 +799,9 @@ html[data-season="winter"]{--brass:#946f3e;--brass-l:#d2b487}
     </div>
     <ul class="floor__strip" data-reveal>
       <li><figure><img src="assets/img/atmosphere-720.webp" width="720" height="404" alt="A busy open kitchen during service." loading="lazy" decoding="async"><figcaption><span>I</span>Service</figcaption></figure></li>
-      <li><figure><img src="assets/img/kitchen-team-720.webp" width="720" height="388" alt="Chefs plating at the pass." loading="lazy" decoding="async"><figcaption><span>II</span>The pass</figcaption></figure></li>
+      <li><figure><img src="assets/img/the-pass.webp" width="720" height="964" alt="The pass during service: order tickets on the rail and plates waiting." loading="lazy" decoding="async"><figcaption><span>II</span>The pass</figcaption></figure></li>
       <li><figure><img src="assets/img/chef-service-720.webp" width="720" height="480" alt="A chef cooking at a station under warm lamps." loading="lazy" decoding="async"><figcaption><span>III</span>The station</figcaption></figure></li>
-      <li><figure><img src="assets/img/detail-640.webp" width="640" height="427" alt="A chef plating a dish at a dark counter." loading="lazy" decoding="async"><figcaption><span>IV</span>The plate</figcaption></figure></li>
+      <li><figure><img src="assets/img/hands-plating.webp" width="720" height="964" alt="A chef’s hands placing a final garnish with tweezers." loading="lazy" decoding="async"><figcaption><span>IV</span>The plate</figcaption></figure></li>
     </ul>
   </section>
 
